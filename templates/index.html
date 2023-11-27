@@ -10,12 +10,32 @@
     <title>Predicting Individual Income</title>
 
 </head>
+<script>
+    function validateForm() {
+        let age = document.forms["attributes"]["age"].value;
+        if (isNaN(age) == true) {
+            alert("age must be a number");
+            return false;
+        }
+        let workclass = document.forms["attributes"]["workclass"].value;
+        let workclass_set = new Set(["Private", "Self-emp-not-inc", "Self-emp-inc", "Federal-gov", "Local-gov", "State-gov", "Without-pay", "Never-worked"])
+        if (workclass_set.has(workclass) == false) {
+            alert("workclass invalid");
+            return false;
+        }
+        let fnlwgt = document.forms["attributes"]["fnlwgt"].value;
+        if (isNaN(fnlwgt) == true) {
+            alert("fnlwgt must be a number");
+            return false;
+        }
+    }
+</script>
 <div class="login">
     <h1>Predicting Individual Income</h1>
 
     <!-- Action is where the data is sent. In our case, predict page.
     If action is omitted, it assumed to be the current page -->
-    <form action="{{ url_for('predict')}}" method="post">
+    <form name="attributes" action="{{ url_for('predict')}}" onsubmit="return validateForm()" method="post">
         <input type="text" name="age" placeholder="age" required="required" /><br>
         <input type="text" name="workclass" placeholder="workclass" required="required" /><br>
         <input type="text" name="fnlwgt" placeholder="fnlwgt" required="required" /><br>

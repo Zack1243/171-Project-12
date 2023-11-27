@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -8,4 +8,4 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    return 'output'
+    return request.form.get("workclass")
