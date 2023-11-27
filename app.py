@@ -8,4 +8,4 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    r
+    return 'output'
