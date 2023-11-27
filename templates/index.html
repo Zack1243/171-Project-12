@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Make it compatible to mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Predicting Individual Income</title>
+
+</head>
+<div class="login">
+    <h1>Predicting Individual Income</h1>
+
+    <!-- Action is where the data is sent. In our case, predict page.
+    If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="age" placeholder="age" required="required" /><br>
+        <input type="text" name="workclass" placeholder="workclass" required="required" /><br>
+        <input type="text" name="fnlwgt" placeholder="fnlwgt" required="required" /><br>
+        <input type="text" name="education" placeholder="education" required="required" /><br>
+        <input type="text" name="education-num" placeholder="education-num" required="required" /><br>
+        <input type="text" name="marital-status" placeholder="marital-status" required="required" /><br>
+        <input type="text" name="occupation" placeholder="occupation" required="required" /><br>
+        <input type="text" name="relationship" placeholder="relationship" required="required" /><br>
+        <input type="text" name="race" placeholder="race" required="required" /><br>
+        <input type="text" name="sex" placeholder="sex" required="required" /><br>
+        <input type="text" name="capital-gain" placeholder="capital-gain" required="required" /><br>
+        <input type="text" name="capital-loss" placeholder="capital-loss" required="required" /><br>
+        <input type="text" name="hours-per-week" placeholder="hours-per-week" required="required" /><br>
+        <p>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict income</button>
+        </p>
+    </form>
+
+</div>
+
+
+</html>
