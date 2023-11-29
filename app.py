@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 RF_model = pickle.load(open("RF_model.pkl", "rb"))
 ohe = pickle.load(open("ohe.pkl", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
+# scaler = pickle.load(open("scaler.pkl", "rb"))
 
 @app.route("/")
 def home():
@@ -37,8 +37,10 @@ def predict():
     encoded_columns = ohe.transform(df[columns_to_encode])
     encoded_df = pd.DataFrame(encoded_columns, columns=ohe.get_feature_names_out(columns_to_encode))
     df_encoded = pd.concat([df.drop(columns=columns_to_encode), encoded_df], axis=1)
-    scaled_input = scaler.transform(df_encoded)
-    pred = RF_model.predict(scaled_input)
+    # scaled_input = scaler.transform(df_encoded)
+    # print(scaled_input)
+    pred = RF_model.predict(df_encoded)
+    print(pred)
     if pred == [1]:
         return '>50k'
     return '<50k'
