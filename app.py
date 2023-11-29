@@ -40,7 +40,7 @@ def predict():
     # scaled_input = scaler.transform(df_encoded)
     # print(scaled_input)
     pred = RF_model.predict(df_encoded)
-    print(pred)
+    # print(pred)
     if pred == [1]:
         return '>50k'
     return '<50k'
