@@ -42,5 +42,13 @@ def predict():
     pred = RF_model.predict(df_encoded)
     # print(pred)
     if pred == [1]:
-        return '>50k'
-    return '<50k'
+        result =  '>50k'
+    else:
+        result = '<50k'
+
+    #return result
+
+    return render_template('result.html', prediction=result )
+    
+
+    
