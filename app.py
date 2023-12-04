@@ -37,16 +37,11 @@ def predict():
     encoded_columns = ohe.transform(df[columns_to_encode])
     encoded_df = pd.DataFrame(encoded_columns, columns=ohe.get_feature_names_out(columns_to_encode))
     df_encoded = pd.concat([df.drop(columns=columns_to_encode), encoded_df], axis=1)
-    # scaled_input = scaler.transform(df_encoded)
-    # print(scaled_input)
     pred = RF_model.predict(df_encoded)
-    # print(pred)
     if pred == [1]:
         result =  '>50k'
     else:
         result = '<50k'
-
-    #return result
 
     return render_template('result.html', prediction=result )
     

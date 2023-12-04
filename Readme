@@ -1,1 +1,7 @@
-Insert Report here
+templates contains html files used for frontend
+171_group_project.ipynb is the main jupyter notebook containing source code for eda, data preprocessing, model fitting, hyperparameter tuning, and results
+app.py is the flask code for the frontend
+How we increased model accuracy.ipynb contains further details on how we increased model accuracy and some unsuccessful attempts that did not make it to the final
+ohe.pkl is the pickled one hot encoder
+RF_model.pkl is the pickled random forest model
+train.csv is the dataset we used
