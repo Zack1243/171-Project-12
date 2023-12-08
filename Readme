@@ -6,4 +6,4 @@ ohe.pkl is the pickled one hot encoder
 RF_model.pkl is the pickled random forest model
 train.csv is the dataset we used
 
-Frontend:
+Frontend: run using "flask --app app run"
