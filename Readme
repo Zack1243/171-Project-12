@@ -5,3 +5,5 @@ How we increased model accuracy.ipynb contains further details on how we increas
 ohe.pkl is the pickled one hot encoder
 RF_model.pkl is the pickled random forest model
 train.csv is the dataset we used
+
+Frontend:
